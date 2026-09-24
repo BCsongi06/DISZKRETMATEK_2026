@@ -40,17 +40,40 @@ def abszolut(x):
     return x
 
 def elojel(x):
-    if x > 0:
-        return 1
-    elif x < 0:
-        return -1
-    return 0
+    if x < 0:
+        print("negativ")
+    elif x == 0:
+        print("nulla")
+    else:
+        print("pozitiv")
+
+elojel(10)
+
+def elojel2(x):
+    if x < 0:
+        return "negativ"
+    elif x == 0:
+        return "nulla"
+    else:
+        return "pozitiv"
+
+print(f"10 es elojele : {elojel2(-99)}")
 
 def also_egesz(x):
     return math.floor(x)
 
 def felso_egesz(x):
-    return math.ceil(x)
+    temp = int(x)
+    if x>0 and  x !=temp:
+        return temp + 1
+    return temp
+
+import math
+szamok = [10,10.3, -10, -10.56]
+for sz in szamok:
+    res = felso_egesz(sz)
+    print(res)
+
 
 def masodfoku_gyok(a, b, c):
     d = b**2 - 4*a*c
@@ -62,9 +85,12 @@ def masodfoku_gyok(a, b, c):
         return -b / (2*a)
     return None
 
-def byte_szukseglet():
-    k = int(input("k = "))
-    return math.ceil(k / 8)
+def byte_szukseglet(k):
+    temp = k//8
+    if k % 8 == 0:
+        return temp
+    return temp+1
+
 
 def elso_n_termeszetes(n):
     lista = []
